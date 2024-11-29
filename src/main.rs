@@ -25,7 +25,8 @@ async fn main() {
     let csrf_config = CsrfConfig::new()
         .with_cookie_name("csrf")
         .with_cookie_path("/")
-        .with_key(Some(csrf_key));
+        .with_key(Some(csrf_key))
+        .with_salt("-meow-meow-"); // We were missing salt!
 
     let app = Router::new()
         .route("/", get(set_token).post(validate_token))
