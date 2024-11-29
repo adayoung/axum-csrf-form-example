@@ -1,0 +1,12 @@
+[package]
+name = "axum-csrf-form-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+askama = { version = "0.12.1", features = ["with-axum"] }
+askama_axum = "0.4.0"
+axum = "0.7.9"
+axum_csrf = { version = "0.10.2", features = ["layer"] }
+serde = { version = "1.0.215", features = ["derive"] }
+tokio = { version = "1.41.1", features = ["full"] }
